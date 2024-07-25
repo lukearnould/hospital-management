@@ -1,10 +1,25 @@
 ﻿@model HomeViewModel
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Hospital Maintenance";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="sidebar">
+    @foreach (Hospital hospital in Model.Hospitals)
+    {
+        <div>
+            <h1>@hospital.Name</h1>
+            <h2>@hospital.Description</h2>
+        </div>
+    }
+</div>
+
+<div class="pane">
+    @foreach (Hospital hospital in Model.Hospitals)
+    {
+        <form asp-action="Edit" asp-controller="Home">
+            <input asp-for="Hospital.Name" class="form-control" />
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    }
 </div>

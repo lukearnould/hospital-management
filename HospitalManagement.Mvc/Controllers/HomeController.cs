@@ -1,20 +1,34 @@
+using HospitalManagement.Models;
 using HospitalManagement.Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace HospitalManagement.Mvc.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(ILogger<HomeController> _logger, Service service) : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
+            HomeViewModel viewModel = new()
+            {
+                Hospitals = new()
+                {
+                    new()
+                    {
+                        Name = "NW OKC",
+                        Description = "A beautiful hospital"
+                    }
+                }
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Submit(Hospital hospital)
+        {
+
+            // await service.Save(hospital);
             return View();
         }
 
