@@ -1,8 +1,8 @@
-using HospitalManagement.Models;
+using HospitalManagement.Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace HospitalManagement.Controllers
+namespace HospitalManagement.Mvc.Controllers
 {
     public class HomeController : Controller
     {
