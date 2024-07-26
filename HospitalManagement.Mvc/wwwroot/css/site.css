@@ -1,5 +1,6 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    background: linear-gradient(white, #f7d0af);
 }
 
 @media (min-width: 768px) {
@@ -18,7 +19,9 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    font-family: "Montserrat", sans-serif;
+    background: none;
 }
 
 .sidebar {
@@ -27,4 +30,12 @@ body {
 
 .pane {
     flex: 70;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    font-weight: 800;
 }
