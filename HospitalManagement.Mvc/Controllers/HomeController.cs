@@ -11,30 +11,38 @@ namespace HospitalManagement.Mvc.Controllers
         {
             HomeViewModel viewModel = new()
             {
-                Hospitals = new()
-                {
+                Hospitals = [
                     new()
                     {
                         Name = "NW OKC",
                         Description = "A beautiful hospital"
+                    },
+                    new() {
+                        Name = "SW OKC",
+                        Description = "A more beautiful hospital"
                     }
-                }
+                ]
             };
 
             return View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Submit(Hospital hospital)
+        public async Task<IActionResult> Save(Hospital hospital)
         {
-
             // await service.Save(hospital);
-            return View();
+            TempData.Add("Toast", "Hospital " + (hospital.HospitalId == 0 ? "created!" : "updated!"));
+
+            return RedirectToAction("Index");
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public async Task<IActionResult> Delete(int hospitalId)
         {
-            return View();
+            // await service.Delete(hospitalId);
+
+            TempData.Add("Toast", "Hospital was deleted");
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
