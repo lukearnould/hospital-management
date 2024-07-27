@@ -16,7 +16,6 @@ namespace HospitalManagement
             return new HospitalContext(config.SQLConnectionString);
         }
 
-
         public async Task<List<Hospital>> Get()
         {
             using var db = DefaultContext();
