@@ -43,6 +43,12 @@ h2 {
     box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
 }
 
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .empty-set-container {
     color: var(--bs-secondary);
     text-align: center;
