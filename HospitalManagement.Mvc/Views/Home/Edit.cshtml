@@ -1,6 +1,13 @@
 ﻿@model EditViewModel
 
-<div class="card card-body pane">
+<div class="page-header">
+    <a asp-action="Index" class="btn btn-lg btn-dark"><i class="fa-solid fa-home"></i> Back to Home</a>
+    <h1>Edit Hospital</h1>
+</div>
+
+<hr />
+
+<div class="card card-body">
     <form asp-action="Save" asp-controller="Home" method="post">
         <input asp-for="Hospital.HospitalId" type="hidden" />
 
