@@ -64,7 +64,6 @@ h2 {
 .hospital-card {
     border: solid .0em gray;
     display: flex;
-    flex: 30%;
     border-radius: var(--rounded);
     transition: transform .2s;
     box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
@@ -79,24 +78,25 @@ h2 {
 
     .hospital-card .color {
         height: 100%;
-        width: 8em;
+        width: 30%;
         border-bottom-left-radius: var(--rounded);
         border-top-left-radius: var(--rounded);
     }
 
     .hospital-card .body {
         display: flex;
+        flex: 5;
+        width: 70%;
         flex-direction: column;
         justify-content: center;
-        width: 100%;
         border-top-right-radius: var(--rounded);
         border-bottom-right-radius: var(--rounded);
         padding-inline-start: 1em;
         background-color: var(--bs-body-bg);
     }
 
-    .hospital-card .description {
-        width: 15em;
+    .hospital-card .description,
+    .hospital-card h2 {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
