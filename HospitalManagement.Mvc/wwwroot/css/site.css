@@ -31,6 +31,24 @@ h2 {
     font-weight: 800;
 }
 
+.btn, 
+.toast {
+    border-radius: var(--rounded);
+    transition: transform .2s;
+}
+
+.btn:hover,
+.toast:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
+}
+
+.empty-set-container {
+    color: var(--bs-secondary);
+    text-align: center;
+    margin-top: 3em;
+}
+
 .hospital-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
