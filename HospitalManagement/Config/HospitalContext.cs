@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagement
+namespace HospitalManagement.Config
 {
     public class HospitalContext(string connectionString) : DbContext
     {

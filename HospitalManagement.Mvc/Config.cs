@@ -1,4 +1,6 @@
-﻿namespace HospitalManagement.Mvc
+﻿using HospitalManagement.Config;
+
+namespace HospitalManagement.Mvc
 {
     public class Config(IConfiguration config) : ICoreConfig
     {

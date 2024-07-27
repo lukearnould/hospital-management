@@ -1,4 +1,4 @@
-﻿namespace HospitalManagement
+﻿namespace HospitalManagement.Config
 {
     public interface ICoreConfig
     {

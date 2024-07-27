@@ -1,4 +1,5 @@
 using HospitalManagement;
+using HospitalManagement.Config;
 using HospitalManagement.Mvc;
 using Microsoft.Extensions.Configuration;
 
