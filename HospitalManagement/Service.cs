@@ -9,9 +9,14 @@ namespace HospitalManagement
 {
     public class Service(Repository repo)
     {
+        public async Task<List<Hospital>> Get()
+        {
+            return await repo.Get();
+        }
+
         public async Task Save(Hospital hospital)
         {
-            //await repo.Save(hospital);
+            await repo.Save(hospital);
         }
     }
 }

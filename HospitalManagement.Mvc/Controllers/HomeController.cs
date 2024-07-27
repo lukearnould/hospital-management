@@ -8,42 +8,10 @@ namespace HospitalManagement.Mvc.Controllers
 {
     public class HomeController(ILogger<HomeController> _logger, Service service) : Controller
     {
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            HomeViewModel viewModel = new()
-            {
-                Hospitals = [
-                    new()
-                    {
-                        Name = "NW OKC",
-                        Description = "A beautiful hospital test A beautiful hospital test A beautiful hospital test A beautiful hospital test A beautiful hospital test ",
-                        Color = "#ff0808"
-                    },
-                    new() {
-                        Name = "SW OKC",
-                        Description = "A more beautiful hospital",
-                        Color = "#635b59"
-                    },
-                                        new()
-                    {
-                        Name = "NW OKC",
-                        Description = "A beautiful hospital",
-                        Color = "#496c2a"
-                    },
-                                        new()
-                    {
-                        Name = "NW OKC",
-                        Description = "A beautiful hospital",
-                        Color = "#496c2a"
-                    },
-                                        new()
-                    {
-                        Name = "NW OKC",
-                        Description = "A beautiful hospital",
-                        Color = "#0a0081"
-                    },
-                ]
-            };
+            HomeViewModel viewModel = new();
+            viewModel.Hospitals = await service.Get();
 
             return View(viewModel);
         }
