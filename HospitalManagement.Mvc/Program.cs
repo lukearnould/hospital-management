@@ -1,4 +1,6 @@
 using HospitalManagement;
+using HospitalManagement.Mvc;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<Service>();
 builder.Services.AddSingleton<Repository>();
+
+builder.Services.AddSingleton<ICoreConfig, Config>();
 
 var app = builder.Build();
 

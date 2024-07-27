@@ -8,19 +8,12 @@ using System.Threading.Tasks;
 
 namespace HospitalManagement
 {
-    public class HospitalContext : DbContext
+    public class HospitalContext(string connectionString) : DbContext
     {
         public DbSet<Hospital> Hospital { get; set; }
 
-        public string DbPath { get; }
+        public string ConnectionString { get; } = connectionString;
 
-        public HospitalContext()
-        {
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            DbPath = "LUKE-DESKTOP\\SQLEXPRESS";
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlServer($"Data Source={DbPath}; Initial Catalog=HospitalManagement; Trust Server Certificate=true; User Id=HospitalManagementUser; Password=quTxyr-godzu8-qerpic");
+        protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlServer(ConnectionString);
     }
 }

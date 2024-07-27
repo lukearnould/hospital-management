@@ -8,24 +8,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HospitalManagement
 {
-    public class Repository
+    public class Repository(ICoreConfig config)
     {
 
         public async Task<List<Hospital>> Get()
         {
-            using var db = new HospitalContext();
+            using var db = new HospitalContext(config.SQLConnectionString);
             return await db.Hospital.ToListAsync();
         }
 
         public async Task<Hospital?> Get(int id)
         {
-            using var db = new HospitalContext();
+            using var db = new HospitalContext(config.SQLConnectionString);
             return await db.Hospital.FindAsync(id);
         }
 
         public async Task Save(Hospital hospital)
         {
-            using var db = new HospitalContext();
+            using var db = new HospitalContext(config.SQLConnectionString);
 
             if (hospital.HospitalId == 0)
             {
@@ -40,7 +40,7 @@ namespace HospitalManagement
 
         public async Task Delete(int id)
         {
-            using var db = new HospitalContext();
+            using var db = new HospitalContext(config.SQLConnectionString);
             
             Hospital hospital = new() { HospitalId = id };
             db.Hospital.Attach(hospital);
