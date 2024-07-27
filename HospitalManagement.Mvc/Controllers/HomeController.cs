@@ -2,7 +2,7 @@ using HospitalManagement.Models;
 using HospitalManagement.Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Drawing;
+using System.Text.Json;
 
 namespace HospitalManagement.Mvc.Controllers
 {
@@ -35,7 +35,15 @@ namespace HospitalManagement.Mvc.Controllers
         public async Task<IActionResult> Save(Hospital hospital)
         {
             await service.Save(hospital);
-            TempData.Add("Toast", "Hospital " + (hospital.HospitalId == 0 ? "created!" : "updated!"));
+
+            if (hospital.HospitalId == 0)
+            {
+                Toast(ActionType.Create, "Hospital created!");
+            }
+            else
+            {
+                Toast(ActionType.Edit, "Hospital edited.");
+            }
 
             return RedirectToAction("Index");
         }
@@ -45,7 +53,7 @@ namespace HospitalManagement.Mvc.Controllers
         {
             await service.Delete(hospitalId);
 
-            TempData.Add("Toast", "Hospital was deleted");
+            Toast(ActionType.Delete, "Hospital deleted");
             return RedirectToAction("Index");
         }
 
@@ -53,6 +61,12 @@ namespace HospitalManagement.Mvc.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        private void Toast(ActionType actionType, string message)
+        {
+            string encoded = JsonSerializer.Serialize(new Toast(actionType, message));
+            TempData.Add("Toast", encoded);
         }
     }
 }
