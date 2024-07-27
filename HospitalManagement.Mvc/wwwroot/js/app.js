@@ -1,5 +1,8 @@
 ﻿import bootstrap from '../../node_modules/bootstrap/dist/js/bootstrap.bundle.js';
-window.bootstrap = bootstrap;
+globalThis.bootstrap = bootstrap;
 
 import TomSelect from '../../node_modules/tom-select/dist/js/tom-select.complete.js';
-window.TomSelect = TomSelect;
+globalThis.TomSelect = TomSelect;
+
+import VMasker from '../../node_modules/vanilla-masker/build/vanilla-masker.min.js';
+globalThis.VMasker = VMasker;

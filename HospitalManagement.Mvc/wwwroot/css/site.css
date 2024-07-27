@@ -29,9 +29,14 @@ h1 {
 
 h2 {
     font-weight: 800;
+    font-size: 1.5em;
 }
 
-.btn, 
+.text-small {
+    font-size: .9em;
+}
+
+.btn,
 .toast {
     border-radius: var(--rounded);
     transition: transform .2s;
@@ -95,9 +100,41 @@ h2 {
         background-color: var(--bs-body-bg);
     }
 
-    .hospital-card .description,
-    .hospital-card h2 {
+    .truncate {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+.edit-card {
+    border-radius: 1em;
+    background-color: var(--bs-body-bg);
+    padding: 2em;
+    border: .05em solid #cccccc;
+}
+
+.edit-columns {
+    display: flex;
+    gap: 1em;
+}
+
+.edit-main-column {
+    flex: 7;
+}
+
+    .edit-main-column textarea {
+        height: 100%;
+    }
+
+    .edit-public-info-column {
+        flex: 3;
+    }
+
+.edit-action-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-action-area .btn {
+    width: 25%;
+}

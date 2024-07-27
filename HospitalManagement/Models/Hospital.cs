@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata.Ecma335;
 
 namespace HospitalManagement.Models
 {
@@ -24,5 +25,20 @@ namespace HospitalManagement.Models
         }
 
         private string _color;
+
+        public string PhoneNumber
+        {
+            get { return _phoneNumber; }
+            set { _phoneNumber = value?.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", ""); }
+        }
+
+        private string _phoneNumber;
+        [StringLength(100)]
+        public string EmailAddress { get; set; }
+
+        [StringLength(100)]
+        public string URL { get; set; }
+
+        //public List<Tag> Tags { get; set; }
     }
 }
