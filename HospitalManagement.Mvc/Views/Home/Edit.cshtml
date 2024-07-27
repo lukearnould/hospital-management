@@ -18,7 +18,7 @@
         <textarea asp-for="Hospital.Description" class="form-control"></textarea>
 
         <label asp-for="Hospital.Color">Color</label>
-        <input type="color" asp-for="Hospital.Color" />
+        <input type="color" asp-for="Hospital.Color" value="#@Model.Hospital.Color" />
 
         <button class="btn btn-primary" type="submit">Submit</button>
 
