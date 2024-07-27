@@ -1,6 +1,12 @@
+:root {
+    --rounded: 3em;
+}
+
 html {
     font-size: 14px;
     background: linear-gradient(white, #f7d0af);
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -9,33 +15,65 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
     margin-bottom: 60px;
     font-family: "Montserrat", sans-serif;
     background: none;
 }
 
-.sidebar {
-    flex: 30;
-}
-
-.pane {
-    flex: 70;
-}
-
 h1 {
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 2.5em;
+    text-align: center;
 }
 
 h2 {
     font-weight: 800;
 }
+
+.hospital-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+    gap: 2em;
+}
+
+.hospital-card {
+    border: solid .0em gray;
+    display: flex;
+    flex: 30%;
+    border-radius: var(--rounded);
+    transition: transform .2s;
+    box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
+    height: 8em;
+    text-decoration: none;
+    color: var(--bs-text-body);
+}
+
+    .hospital-card:hover {
+        transform: scale(1.05);
+    }
+
+    .hospital-card .color {
+        height: 100%;
+        width: 8em;
+        border-bottom-left-radius: var(--rounded);
+        border-top-left-radius: var(--rounded);
+    }
+
+    .hospital-card .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        border-top-right-radius: var(--rounded);
+        border-bottom-right-radius: var(--rounded);
+        padding-inline-start: 1em;
+        background-color: var(--bs-body-bg);
+    }
+
+    .hospital-card .description {
+        width: 15em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }

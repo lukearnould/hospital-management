@@ -4,17 +4,19 @@
     ViewData["Title"] = "Hospital Management";
 }
 
-<h1 class="text-center"><i class="fa-solid fa-hospital"></i> Hospital Management</h1>
+<h1>Hospital Management</h1>
 
 <hr />
 
-<div class="sidebar">
+<div class="hospital-grid">
     @foreach (Hospital hospital in Model.Hospitals)
     {
-        <div class="hospital-card">
-            <div class="color"></div>
-            <h2>@hospital.Name</h2>
-            <p>@hospital.Description</p>
-        </div>
+        <a asp-action="Edit" asp-route-id="@hospital.HospitalId" class="hospital-card">
+            <div class="color" style="background-color: @hospital.Color"></div>
+            <div class="body">
+                <h2>@hospital.Name</h2>
+                <span class="description">@hospital.Description</span>
+            </div>
+        </a>
     }
 </div>
