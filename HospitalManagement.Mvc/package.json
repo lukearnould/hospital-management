@@ -4,11 +4,14 @@
   "description": "Static assets for Hospital Management Web application",
   "main": "build.js",
   "scripts": {
+    "build": "node bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Luke Arnould",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^5.3.3",
+    "esbuild": "^0.23.0",
     "tom-select": "^2.3.1"
   }
 }
