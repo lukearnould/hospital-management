@@ -27,6 +27,14 @@ namespace HospitalManagement.Mvc.Controllers
             return View(viewModel);
         }
 
+        public async Task<IActionResult> Edit(int id)
+        {
+            // Hospital hospital = await service.Get(id);
+            EditViewModel viewModel = new() { /*Hospital = hospital*/ };
+
+            return View(viewModel);
+        }
+
         [HttpPost]
         public async Task<IActionResult> Save(Hospital hospital)
         {
