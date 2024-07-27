@@ -34,9 +34,10 @@ namespace HospitalManagement.Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Save(Hospital hospital)
         {
+            int initialId = hospital.HospitalId;
             await service.Save(hospital);
 
-            if (hospital.HospitalId == 0)
+            if (initialId == 0)
             {
                 Toast(ActionType.Create, "Hospital created!");
             }
@@ -53,7 +54,7 @@ namespace HospitalManagement.Mvc.Controllers
         {
             await service.Delete(hospitalId);
 
-            Toast(ActionType.Delete, "Hospital deleted");
+            Toast(ActionType.Delete, "Hospital deleted.");
             return RedirectToAction("Index");
         }
 
