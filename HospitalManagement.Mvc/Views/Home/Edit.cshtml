@@ -2,11 +2,16 @@
 
 <div class="card card-body pane">
     <form asp-action="Save" asp-controller="Home" method="post">
+        <input asp-for="Hospital.HospitalId" type="hidden" />
+
         <label asp-for="Hospital.Name">Name</label>
         <input asp-for="Hospital.Name" class="form-control" />
 
         <label asp-for="Hospital.Description">Description</label>
         <textarea asp-for="Hospital.Description" class="form-control"></textarea>
+
+        <label asp-for="Hospital.Color">Color</label>
+        <input type="color" asp-for="Hospital.Color" />
 
         <button class="btn btn-primary" type="submit">Submit</button>
 

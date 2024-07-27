@@ -4,6 +4,6 @@ namespace HospitalManagement.Mvc.Models
 {
     public class EditViewModel
     {
-        public Hospital Hospital { get; set; }
+        public Hospital Hospital { get; set; } = new();
     }
 }

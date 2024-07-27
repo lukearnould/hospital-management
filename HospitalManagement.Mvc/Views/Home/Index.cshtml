@@ -4,19 +4,31 @@
     ViewData["Title"] = "Hospital Management";
 }
 
-<h1>Hospital Management</h1>
+<div class="d-flex justify-content-between align-items-center">
+    <h1>Hospital Management</h1>
+    <a asp-action="Create" class="btn btn-lg btn-dark"><i class="fa-solid fa-circle-plus"></i> Create New</a>
+</div>
 
 <hr />
 
-<div class="hospital-grid">
-    @foreach (Hospital hospital in Model.Hospitals)
-    {
-        <a asp-action="Edit" asp-route-id="@hospital.HospitalId" class="hospital-card">
-            <div class="color" style="background-color: @hospital.Color"></div>
-            <div class="body">
-                <h2>@hospital.Name</h2>
-                <span class="description">@hospital.Description</span>
-            </div>
-        </a>
-    }
-</div>
+@if (Model.Hospitals.Count > 0) {
+    <div class="hospital-grid">
+        @foreach (Hospital hospital in Model.Hospitals)
+        {
+            <a asp-action="Edit" asp-route-id="@hospital.HospitalId" class="hospital-card">
+                <div class="color" style="background-color: #@hospital.Color"></div>
+                <div class="body">
+                    <h2>@hospital.Name</h2>
+                    <span class="description">@hospital.Description</span>
+                </div>
+            </a>
+        }
+    </div>
+}
+else
+{
+    <div class="empty-set-container">
+        <h2><i class="fa-solid fa-ban"></i> No Hospitals Added</h2>
+        <p>Add a hospital using the 'Create' button above.</p>
+    </div>
+}

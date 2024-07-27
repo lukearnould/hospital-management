@@ -16,10 +16,17 @@ namespace HospitalManagement.Mvc.Controllers
             return View(viewModel);
         }
 
+        public async Task<IActionResult> Create()
+        {
+            EditViewModel viewModel = new();
+
+            return View("Edit", viewModel);
+        }
+
         public async Task<IActionResult> Edit(int id)
         {
-            // Hospital hospital = await service.Get(id);
-            EditViewModel viewModel = new() { /*Hospital = hospital*/ };
+            Hospital hospital = await service.Get(id);
+            EditViewModel viewModel = new() { Hospital = hospital };
 
             return View(viewModel);
         }
@@ -27,7 +34,7 @@ namespace HospitalManagement.Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Save(Hospital hospital)
         {
-            // await service.Save(hospital);
+            await service.Save(hospital);
             TempData.Add("Toast", "Hospital " + (hospital.HospitalId == 0 ? "created!" : "updated!"));
 
             return RedirectToAction("Index");
@@ -36,7 +43,7 @@ namespace HospitalManagement.Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int hospitalId)
         {
-            // await service.Delete(hospitalId);
+            await service.Delete(hospitalId);
 
             TempData.Add("Toast", "Hospital was deleted");
             return RedirectToAction("Index");
