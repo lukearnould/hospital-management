@@ -2,6 +2,7 @@ using HospitalManagement.Models;
 using HospitalManagement.Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace HospitalManagement.Mvc.Controllers
 {
@@ -15,12 +16,32 @@ namespace HospitalManagement.Mvc.Controllers
                     new()
                     {
                         Name = "NW OKC",
-                        Description = "A beautiful hospital"
+                        Description = "A beautiful hospital test A beautiful hospital test A beautiful hospital test A beautiful hospital test A beautiful hospital test ",
+                        Color = "#ff0808"
                     },
                     new() {
                         Name = "SW OKC",
-                        Description = "A more beautiful hospital"
-                    }
+                        Description = "A more beautiful hospital",
+                        Color = "#635b59"
+                    },
+                                        new()
+                    {
+                        Name = "NW OKC",
+                        Description = "A beautiful hospital",
+                        Color = "#496c2a"
+                    },
+                                        new()
+                    {
+                        Name = "NW OKC",
+                        Description = "A beautiful hospital",
+                        Color = "#496c2a"
+                    },
+                                        new()
+                    {
+                        Name = "NW OKC",
+                        Description = "A beautiful hospital",
+                        Color = "#0a0081"
+                    },
                 ]
             };
 
