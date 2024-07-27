@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using HospitalManagement.Config;
+using System.Runtime.CompilerServices;
 
 namespace HospitalManagement
 {
@@ -26,6 +27,19 @@ namespace HospitalManagement
         {
             using var db = DefaultContext();
             return await db.Hospital.FindAsync(id);
+        }
+
+        public async Task<List<Tag>> GetTags()
+        {
+            using var db = DefaultContext();
+            return await db.Tag.ToListAsync();
+        }
+
+        public async Task SaveTags(List<Tag> tags)
+        {
+            using var db = DefaultContext();
+            db.Tag.AddRange(tags);
+            db.SaveChanges();
         }
 
         public async Task Save(Hospital hospital)
