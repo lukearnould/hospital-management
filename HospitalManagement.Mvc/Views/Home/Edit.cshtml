@@ -8,26 +8,9 @@
         <label asp-for="Hospital.Description">Description</label>
         <textarea asp-for="Hospital.Description" class="form-control"></textarea>
 
-        <div>
-            <label asp-for="Hospital.Address.AddressLine1">Address Line 1</label>
-            <input asp-for="Hospital.Address.AddressLine1" class="form-control" />
-
-            <label asp-for="Hospital.Address.AddressLine2">Address Line 2</label>
-            <input asp-for="Hospital.Address.AddressLine2" class="form-control" />
-
-            <label asp-for="Hospital.Address.City">City</label>
-            <input asp-for="Hospital.Address.City" class="form-control" />
-
-            <label asp-for="Hospital.Address.State">State</label>
-            <input asp-for="Hospital.Address.State" class="form-control" />
-
-            <label asp-for="Hospital.Address.ZIP">ZIP</label>
-            <input asp-for="Hospital.Address.ZIP" class="form-control" />
-        </div>
-
         <button class="btn btn-primary" type="submit">Submit</button>
 
-        <button asp-action="Delete" asp-controller="Home" name="hospitalId" value="@hospital.HospitalId" class="btn btn-danger" type="submit">
+        <button asp-action="Delete" asp-controller="Home" name="hospitalId" value="@Model.Hospital.HospitalId" class="btn btn-danger" type="submit">
             <i class="fa-solid fa-trash"></i> Delete
         </button>
     </form>

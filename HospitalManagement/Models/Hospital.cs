@@ -8,6 +8,6 @@
 
         public string Description { get; set; }
 
-        public Address Address { get; set; }
+        public string Color { get; set; }
     }
 }
