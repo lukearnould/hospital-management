@@ -8,7 +8,7 @@ namespace HospitalManagement
     {
         private HospitalContext DefaultContext()
         {
-            return new HospitalContext(config.SQLConnectionString);
+            return new HospitalContext(config.ConnectionString);
         }
 
         public async Task<List<Hospital>> Get()

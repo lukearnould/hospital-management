@@ -4,6 +4,8 @@ namespace HospitalManagement.Mvc
 {
     public class Config(IConfiguration config) : ICoreConfig
     {
-        public string SQLConnectionString { get; set; } = config.GetValue<string>("config:sqlConnectionstring") ?? throw new Exception("Unable to locate connection string in appsettings.json");
+        public string ConnectionString { get; set; } = config.GetValue<string>("config:connectionstring")
+            + " Password=" + config["Database__Password"] + ";" 
+            ?? throw new Exception("Unable to locate connection string and/or database user secret in appsettings.json/secrets.json");
     }
 }

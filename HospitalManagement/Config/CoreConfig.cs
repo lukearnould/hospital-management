@@ -2,6 +2,6 @@
 {
     public interface ICoreConfig
     {
-        string SQLConnectionString { get; }
+        string ConnectionString { get; }
     }
 }
