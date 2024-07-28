@@ -146,6 +146,6 @@ h2 {
     justify-content: space-between;
 }
 
-.edit-action-area .btn {
+.edit-action-area > * {
     width: 25%;
 }
