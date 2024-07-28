@@ -19,7 +19,7 @@
         @foreach (Hospital hospital in Model.Hospitals)
         {
             <a asp-action="Edit" asp-route-id="@hospital.HospitalId" class="hospital-card">
-                <div class="color" style="background-color: #@hospital.Color"></div>
+                <div class="color" style="background-color: @hospital.Color"></div>
                 <div class="body">
                     <h2 class="mb-0 truncate">@hospital.Name</h2>
                     <span class="description truncate">@hospital.Description</span>
