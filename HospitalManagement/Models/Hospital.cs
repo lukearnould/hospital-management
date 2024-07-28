@@ -16,16 +16,9 @@ namespace HospitalManagement.Models
         [Required]
         public string Description { get; set; }
 
-        [StringLength(6)]
         [Required]
-        public string Color
-        {
-            get { return _color; }
-            set { _color = value.Replace("#", ""); }
-        }
-
-        private string _color;
-
+        public string Color { get; set; } = "#000000";
+        
         public string PhoneNumber
         {
             get { return _phoneNumber; }

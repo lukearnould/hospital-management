@@ -11,13 +11,11 @@
     <form asp-action="Save" asp-controller="Home" method="post">
         <input asp-for="Hospital.HospitalId" type="hidden" />
 
-        <div class="d-flex flex-row align-items-center mb-3">
-            <div class="form-floating w-100">
-                <input asp-for="Hospital.Name" class="form-control form-control-lg" placeholder="Name" />
-                <label asp-for="Hospital.Name">Name</label>
-            </div>
-
-            <input type="color" asp-for="Hospital.Color" value="#@Model.Hospital.Color" class="form-control-color ms-3" />
+    <div class="d-flex flex-row align-items-center mb-3">
+        <div class="form-floating w-100">
+            <input asp-for="Hospital.Name" class="form-control form-control-lg" placeholder="Name" />
+            <label asp-for="Hospital.Name">Name</label>
+            <span asp-validation-for="Hospital.Name"></span>
         </div>
 
         <div class="edit-columns">
