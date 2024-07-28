@@ -1,2 +1,2 @@
-﻿CREATE LOGIN [HospitalManagementUser2] WITH PASSWORD = ''
+﻿CREATE LOGIN [HospitalManagementUser] WITH PASSWORD = ''
 
