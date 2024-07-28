@@ -1,3 +1,2 @@
-﻿CREATE LOGIN [HospitalManagementUser]
-    WITH PASSWORD = '', SID = 0xE28900C971F6E142B96FB26D0538B27D, DEFAULT_LANGUAGE = [us_english];
+﻿CREATE LOGIN [HospitalManagementUser2] WITH PASSWORD = ''
 
