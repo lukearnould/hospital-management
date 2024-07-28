@@ -42,6 +42,10 @@ h2 {
     transition: transform .2s;
 }
 
+.form-control {
+    border-radius: 1em;
+}
+
 .btn:hover,
 .toast:hover {
     transform: scale(1.05);
@@ -50,8 +54,21 @@ h2 {
 
 .page-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+}
+
+.page-header > *:first-child, 
+.page-header > *:last-child {
+    flex: 1;
+}
+
+.page-header > *:not(:last-child, :first-child) {
+    flex: 2;
+}
+
+.page-header > *:last-child {
+    text-align: end;
 }
 
 .empty-set-container {
@@ -105,13 +122,6 @@ h2 {
         overflow: hidden;
         text-overflow: ellipsis;
     }
-
-.edit-card {
-    border-radius: 1em;
-    background-color: var(--bs-body-bg);
-    padding: 2em;
-    border: .05em solid #cccccc;
-}
 
 .edit-columns {
     display: flex;
