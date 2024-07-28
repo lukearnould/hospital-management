@@ -26,6 +26,8 @@ namespace HospitalManagement.Models
         }
 
         private string _phoneNumber;
+
+        [EmailAddress]
         [StringLength(100)]
         public string EmailAddress { get; set; }
 
