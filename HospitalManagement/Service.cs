@@ -1,5 +1,4 @@
 ﻿using HospitalManagement.Models;
-using System.Security.Cryptography;
 
 namespace HospitalManagement
 {

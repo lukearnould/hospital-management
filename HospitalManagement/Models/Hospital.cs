@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata.Ecma335;
 
 namespace HospitalManagement.Models
 {
@@ -18,7 +17,7 @@ namespace HospitalManagement.Models
 
         [Required]
         public string Color { get; set; } = "#000000";
-        
+
         public string PhoneNumber
         {
             get { return _phoneNumber; }

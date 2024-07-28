@@ -1,12 +1,6 @@
-﻿using HospitalManagement.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HospitalManagement.Config;
+using HospitalManagement.Models;
 using Microsoft.EntityFrameworkCore;
-using HospitalManagement.Config;
-using System.Runtime.CompilerServices;
 
 namespace HospitalManagement
 {
