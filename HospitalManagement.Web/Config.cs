@@ -1,6 +1,6 @@
 ﻿using HospitalManagement.Config;
 
-namespace HospitalManagement.Mvc
+namespace HospitalManagement.Web
 {
     public class Config(IConfiguration config) : ICoreConfig
     {

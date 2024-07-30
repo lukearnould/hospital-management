@@ -1,4 +1,4 @@
-﻿namespace HospitalManagement.Mvc.Models
+﻿namespace HospitalManagement.Web.Models
 {
     public record Toast
     {

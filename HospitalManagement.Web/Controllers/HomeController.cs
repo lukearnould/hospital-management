@@ -1,10 +1,10 @@
 using HospitalManagement.Models;
-using HospitalManagement.Mvc.Models;
+using HospitalManagement.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Text.Json;
 
-namespace HospitalManagement.Mvc.Controllers
+namespace HospitalManagement.Web.Controllers
 {
     public class HomeController(ILogger<HomeController> _logger, Service service) : Controller
     {

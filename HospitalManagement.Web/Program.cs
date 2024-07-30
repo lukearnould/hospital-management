@@ -1,6 +1,6 @@
 using HospitalManagement;
 using HospitalManagement.Config;
-using HospitalManagement.Mvc;
+using HospitalManagement.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 

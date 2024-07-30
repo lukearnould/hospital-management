@@ -1,6 +1,6 @@
 ﻿using HospitalManagement.Models;
 
-namespace HospitalManagement.Mvc.Models
+namespace HospitalManagement.Web.Models
 {
     public class EditViewModel
     {
