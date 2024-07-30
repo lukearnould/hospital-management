@@ -1,10 +1,15 @@
 ﻿@model Hospital
 
+@{
+    string pageTitle = Model.HospitalId == 0 ? "Create" : "Edit";
+    ViewData["Title"] = pageTitle;
+}
+
 <div class="page-header">
     <div>
         <a asp-action="Index" class="btn btn-lg btn-dark"><i class="fa-solid fa-home"></i> Back to Home</a>
     </div>
-    <h1>Edit Hospital</h1>
+    <h1>@pageTitle Hospital</h1>
     <div></div>
 </div>
 
