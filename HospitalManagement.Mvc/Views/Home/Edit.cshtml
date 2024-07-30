@@ -66,12 +66,15 @@
 <div class="edit-action-area">
     <button form="hospital-form" class="btn btn-dark btn-lg" type="submit">Submit</button>
 
-    @* ugh... https://github.com/ryanelian/aspnet-validation/issues/7 *@
-    <form asp-action="Delete">
-        <button name="hospitalId" value="@Model.Hospital.HospitalId" class="btn btn-outline-danger btn-lg w-100" type="submit">
-            <i class="fa-solid fa-trash"></i> Delete
-        </button>
-    </form>
+    @if (Model.Hospital.HospitalId != 0)
+    {
+        @* ugh... https://github.com/ryanelian/aspnet-validation/issues/7 *@
+        <form asp-action="Delete">
+            <button name="hospitalId" value="@Model.Hospital.HospitalId" class="btn btn-outline-danger btn-lg w-100" type="submit">
+                <i class="fa-solid fa-trash"></i> Delete
+            </button>
+        </form>
+    }
 </div>
 
 
