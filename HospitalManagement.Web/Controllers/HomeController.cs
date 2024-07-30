@@ -11,7 +11,6 @@ namespace HospitalManagement.Web.Controllers
         public async Task<IActionResult> Index()
         {
             List<Hospital> hospitals = await service.Get();
-
             return View(hospitals);
         }
 
@@ -54,8 +53,8 @@ namespace HospitalManagement.Web.Controllers
         public async Task<IActionResult> Delete(int hospitalId)
         {
             await service.Delete(hospitalId);
-
             Toast(ActionType.Delete, "Hospital deleted.");
+
             return RedirectToAction("Index");
         }
 
