@@ -126,8 +126,5 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Hospital.sql" />
     <Build Include="Security\HospitalManagementUser.sql" />
-    <Build Include="Security\HospitalManagementUser_1.sql" />
-    <Build Include="Security\RoleMemberships.sql" />
-    <Build Include="Security\Permissions.sql" />
   </ItemGroup>
 </Project>
