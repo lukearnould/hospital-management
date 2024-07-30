@@ -6,11 +6,6 @@ namespace HospitalManagement
 {
     public class Repository(ICoreConfig config)
     {
-        private HospitalContext DefaultContext()
-        {
-            return new HospitalContext(config.ConnectionString);
-        }
-
         public async Task<List<Hospital>> Get()
         {
             using var db = DefaultContext();
@@ -34,6 +29,7 @@ namespace HospitalManagement
             {
                 db.Update(hospital);
             }
+
             await db.SaveChangesAsync();
         }
 
@@ -45,6 +41,11 @@ namespace HospitalManagement
             db.Hospital.Attach(hospital);
             db.Remove(hospital);
             await db.SaveChangesAsync();
+        }
+
+        private HospitalContext DefaultContext()
+        {
+            return new HospitalContext(config.ConnectionString);
         }
     }
 }

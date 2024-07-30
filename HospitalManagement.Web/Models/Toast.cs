@@ -2,7 +2,12 @@
 {
     public record Toast
     {
-        public Toast() { }
+        public Toast()
+        {
+            Message = "";
+            Icon = "";
+            Color = "";
+        }
 
         public Toast(ActionType actionType, string message)
         {

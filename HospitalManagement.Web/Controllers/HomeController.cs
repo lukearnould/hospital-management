@@ -6,12 +6,11 @@ using System.Text.Json;
 
 namespace HospitalManagement.Web.Controllers
 {
-    public class HomeController(ILogger<HomeController> _logger, Service service) : Controller
+    public class HomeController(Service service) : Controller
     {
         public async Task<IActionResult> Index()
         {
             List<Hospital> hospitals = await service.Get();
-
             return View(hospitals);
         }
 
@@ -54,8 +53,8 @@ namespace HospitalManagement.Web.Controllers
         public async Task<IActionResult> Delete(int hospitalId)
         {
             await service.Delete(hospitalId);
-
             Toast(ActionType.Delete, "Hospital deleted.");
+
             return RedirectToAction("Index");
         }
 
