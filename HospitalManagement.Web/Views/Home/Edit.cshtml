@@ -1,4 +1,4 @@
-﻿@model EditViewModel
+﻿@model Hospital
 
 <div class="page-header">
     <div>
@@ -11,44 +11,44 @@
 <hr />
 
 <form id="hospital-form" asp-action="Save" asp-controller="Home" method="post">
-    <input asp-for="Hospital.HospitalId" type="hidden" />
+    <input asp-for="HospitalId" type="hidden" />
 
     <div class="d-flex flex-row align-items-center mb-3">
         <div class="form-floating w-100">
-            <input asp-for="Hospital.Name" class="form-control form-control-lg" placeholder="Name" />
-            <label asp-for="Hospital.Name">Name</label>
-            <span asp-validation-for="Hospital.Name"></span>
+            <input asp-for="Name" class="form-control form-control-lg" placeholder="Name" />
+            <label asp-for="Name">Name</label>
+            <span asp-validation-for="Name"></span>
         </div>
 
-        <input type="color" asp-for="Hospital.Color" class="form-control-color ms-3" />
-        <span asp-validation-for="Hospital.Color"></span>
+        <input type="color" asp-for="Color" class="form-control-color ms-3" />
+        <span asp-validation-for="Color"></span>
     </div>
 
     <div class="edit-columns">
         <div class="edit-main-column">
-            <textarea asp-for="Hospital.Description" class="form-control" placeholder="Description"></textarea>
-            <span asp-validation-for="Hospital.Description"></span>
+            <textarea asp-for="Description" class="form-control" placeholder="Description"></textarea>
+            <span asp-validation-for="Description"></span>
         </div>
 
         <div class="vr"></div>
 
         <div class="edit-public-info-column">
             <div class="form-floating mb-3">
-                <input id="phone-number" asp-for="Hospital.PhoneNumber" type="tel" class="form-control" placeholder="Phone number" />
+                <input id="phone-number" asp-for="PhoneNumber" type="tel" class="form-control" placeholder="Phone number" />
                 <label for="phone-number">Phone Number</label>
-                <span asp-validation-for="Hospital.PhoneNumber"></span>
+                <span asp-validation-for="PhoneNumber"></span>
             </div>
 
             <div class="form-floating mb-3">
-                <input asp-for="Hospital.EmailAddress" type="email" class="form-control" placeholder="Email Address" />
-                <label asp-for="Hospital.EmailAddress">Email Address</label>
-                <span asp-validation-for="Hospital.EmailAddress"></span>
+                <input asp-for="EmailAddress" type="email" class="form-control" placeholder="Email Address" />
+                <label asp-for="EmailAddress">Email Address</label>
+                <span asp-validation-for="EmailAddress"></span>
             </div>
 
             <div class="form-floating mb-3">
-                <input asp-for="Hospital.URL" type="url" class="form-control" placeholder="Website" />
-                <label asp-for="Hospital.URL">Website</label>
-                <span asp-validation-for="Hospital.URL"></span>
+                <input asp-for="URL" type="url" class="form-control" placeholder="Website" />
+                <label asp-for="URL">Website</label>
+                <span asp-validation-for="URL"></span>
             </div>
         </div>
     </div>
@@ -58,11 +58,11 @@
 <div class="edit-action-area">
     <button form="hospital-form" class="btn btn-dark btn-lg" type="submit">Submit</button>
 
-    @if (Model.Hospital.HospitalId != 0)
+    @if (Model.HospitalId != 0)
     {
         @* ugh... https://github.com/ryanelian/aspnet-validation/issues/7 *@
         <form asp-action="Delete">
-            <button name="hospitalId" value="@Model.Hospital.HospitalId" class="btn btn-outline-danger btn-lg w-100" type="submit">
+            <button name="hospitalId" value="@Model.HospitalId" class="btn btn-outline-danger btn-lg w-100" type="submit">
                 <i class="fa-solid fa-trash"></i> Delete
             </button>
         </form>

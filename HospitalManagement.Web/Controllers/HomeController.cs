@@ -10,25 +10,20 @@ namespace HospitalManagement.Web.Controllers
     {
         public async Task<IActionResult> Index()
         {
-            HomeViewModel viewModel = new();
-            viewModel.Hospitals = await service.Get();
+            List<Hospital> hospitals = await service.Get();
 
-            return View(viewModel);
+            return View(hospitals);
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            EditViewModel viewModel = new();
-
-            return View("Edit", viewModel);
+            return View("Edit", new Hospital());
         }
 
         public async Task<IActionResult> Edit(int id)
         {
             Hospital hospital = await service.Get(id);
-            EditViewModel viewModel = new() { Hospital = hospital };
-
-            return View(viewModel);
+            return View(hospital);
         }
 
         [HttpPost]

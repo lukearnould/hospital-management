@@ -1,4 +1,4 @@
-﻿@model HomeViewModel
+﻿@model List<Hospital>
 
 @{
     ViewData["Title"] = "Hospital Management";
@@ -14,9 +14,9 @@
 
 <hr />
 
-@if (Model.Hospitals.Count > 0) {
+@if (Model.Count > 0) {
     <div class="hospital-grid">
-        @foreach (Hospital hospital in Model.Hospitals)
+        @foreach (Hospital hospital in Model)
         {
             <a asp-action="Edit" asp-route-id="@hospital.HospitalId" class="hospital-card">
                 <div class="color" style="background-color: @hospital.Color"></div>
