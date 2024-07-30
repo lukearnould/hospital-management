@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace HospitalManagement.Web.Controllers
 {
-    public class HomeController(ILogger<HomeController> _logger, Service service) : Controller
+    public class HomeController(Service service) : Controller
     {
         public async Task<IActionResult> Index()
         {
