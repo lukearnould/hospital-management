@@ -1,3 +1,4 @@
+/* Global */
 :root {
     --rounded: 3em;
 }
@@ -32,10 +33,18 @@ h2 {
     font-size: 1.5em;
 }
 
+/* Text Utilities */
 .text-small {
     font-size: .9em;
 }
 
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Form Element Adjustments */
 .btn:has(i) {
     white-space: nowrap !important;
 }
@@ -46,19 +55,20 @@ h2 {
     transition: transform .2s;
 }
 
+    .btn:hover,
+    .toast:hover {
+        transform: scale(1.05);
+    }
+
+    .btn:hover {
+        box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
+    }
+
 .form-control {
     border-radius: 1em;
 }
 
-.btn:hover,
-.toast:hover {
-    transform: scale(1.05);
-}
-
-.btn:hover {
-    box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
-}
-
+/* Page Header */
 .page-header {
     display: flex;
     align-items: center;
@@ -86,12 +96,14 @@ h2 {
         text-align: end;
     }
 
+/* Content Presentation */
 .empty-set-container {
     color: var(--bs-secondary);
     text-align: center;
     margin-top: 3em;
 }
 
+/* Homepage */
 .hospital-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
@@ -132,12 +144,7 @@ h2 {
         background-color: var(--bs-body-bg);
     }
 
-.truncate {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
+/* Edit Page */
 .edit-columns {
     display: flex;
     gap: 1em;
@@ -149,7 +156,6 @@ h2 {
         display: none;
     }
 }
-
 
 .edit-main-column {
     flex: 7 1 20em;
