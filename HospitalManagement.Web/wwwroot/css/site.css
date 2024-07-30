@@ -10,9 +10,9 @@ html {
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
@@ -53,6 +53,9 @@ h2 {
 .btn:hover,
 .toast:hover {
     transform: scale(1.05);
+}
+
+.btn:hover {
     box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
 }
 
@@ -63,10 +66,10 @@ h2 {
     flex-wrap: wrap;
 }
 
-.page-header > *:first-child, 
-.page-header > *:last-child {
-    flex: 1 0 5em;
-}
+    .page-header > *:first-child,
+    .page-header > *:last-child {
+        flex: 1 0 5em;
+    }
 
     .page-header > *:not(:last-child, :first-child) {
         flex: 1 1 70%;
@@ -79,9 +82,9 @@ h2 {
         width: 100%;
     }
 
-.page-header > *:last-child {
-    text-align: end;
-}
+    .page-header > *:last-child {
+        text-align: end;
+    }
 
 .empty-set-container {
     color: var(--bs-secondary);
@@ -129,11 +132,11 @@ h2 {
         background-color: var(--bs-body-bg);
     }
 
-    .truncate {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .edit-columns {
     display: flex;
@@ -156,13 +159,13 @@ h2 {
         height: 100%;
     }
 
-    .edit-public-info-column {
-        flex: 3 1 10em;
-    }
+.edit-public-info-column {
+    flex: 3 1 10em;
+}
 
-        .edit-public-info-column div.form-floating {
-            width: 100%;
-        }
+    .edit-public-info-column div.form-floating {
+        width: 100%;
+    }
 
 .edit-action-area {
     display: flex;
@@ -170,6 +173,6 @@ h2 {
     justify-content: space-between;
 }
 
-.edit-action-area > * {
-    width: 30%;
-}
+    .edit-action-area > * {
+        width: 30%;
+    }
