@@ -28,14 +28,6 @@
         <div class="edit-main-column">
             <textarea asp-for="Hospital.Description" class="form-control" placeholder="Description"></textarea>
             <span asp-validation-for="Hospital.Description"></span>
-            @*
-            <div class="form-floating mb-3">
-            <select id="tags" class="form-select" placeholder="Select groups" multiple></select>
-            </div>
-
-            <div class="form-floating mb-3">
-            <select id="services" class="form-select"></select>
-            </div> *@
         </div>
 
         <div class="vr"></div>
@@ -80,11 +72,6 @@
 
 @section Scripts {
     <script>
-        // let tagTS = new TomSelect(document.getElementById('tags'), {
-        //     create: true
-        // });
-        // let servicesTS = new TomSelect(document.getElementById('services'));
-
         VMasker(document.getElementById('phone-number')).maskPattern('(999) 999-9999')
     </script>
 }

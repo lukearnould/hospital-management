@@ -32,7 +32,5 @@ namespace HospitalManagement.Models
 
         [StringLength(100)]
         public string URL { get; set; }
-
-        //public List<Tag> Tags { get; set; }
     }
 }

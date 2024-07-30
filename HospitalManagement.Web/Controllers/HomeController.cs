@@ -32,10 +32,8 @@ namespace HospitalManagement.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save(Hospital hospital, List<string> tags)
+        public async Task<IActionResult> Save(Hospital hospital)
         {
-            //hospital.Tags = 
-
             int initialId = hospital.HospitalId;
             await service.Save(hospital);
 

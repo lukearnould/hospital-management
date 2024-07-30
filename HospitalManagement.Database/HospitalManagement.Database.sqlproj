@@ -129,7 +129,5 @@
     <Build Include="Security\HospitalManagementUser_1.sql" />
     <Build Include="Security\RoleMemberships.sql" />
     <Build Include="Security\Permissions.sql" />
-    <Build Include="dbo\Tables\Tag.sql" />
-    <Build Include="dbo\Tables\HospitalTag.sql" />
   </ItemGroup>
 </Project>

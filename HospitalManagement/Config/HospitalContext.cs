@@ -7,8 +7,6 @@ namespace HospitalManagement.Config
     {
         public DbSet<Hospital> Hospital { get; set; }
 
-        public DbSet<Tag> Tag { get; set; }
-
         public string ConnectionString { get; } = connectionString;
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlServer(ConnectionString);

@@ -22,20 +22,6 @@ namespace HospitalManagement
             using var db = DefaultContext();
             return await db.Hospital.FindAsync(id);
         }
-
-        public async Task<List<Tag>> GetTags()
-        {
-            using var db = DefaultContext();
-            return await db.Tag.ToListAsync();
-        }
-
-        public async Task SaveTags(List<Tag> tags)
-        {
-            using var db = DefaultContext();
-            db.Tag.AddRange(tags);
-            db.SaveChanges();
-        }
-
         public async Task Save(Hospital hospital)
         {
             using var db = DefaultContext();

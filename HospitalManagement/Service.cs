@@ -22,18 +22,7 @@ namespace HospitalManagement
         public async Task Save(Hospital hospital)
         {
             await repo.Save(hospital);
-            //await ReconcileTags(hospital);
         }
-
-        //private async Task ReconcileTags(Hospital hospital)
-        //{
-        //    var existingTags = await repo.GetTags();
-        //    var newTags = 
-        //        from tag in hospital.Tags
-        //        where !existingTags.Select(x => x.Name).Contains(tag)
-        //        select new Tag() { Name = tag };
-        //    await repo.SaveTags(newTags.ToList());
-        //}
 
         public async Task Delete(int id)
         {
