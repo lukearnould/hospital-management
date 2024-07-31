@@ -13,8 +13,11 @@ dotnet user-secrets set "Database__Password" "<your password goes here>"
 
  4. Update the password set in `HospitalManagement.Database.Security.HospitalManagementUser.sql` to match the password you entered above.
  5. Publish the `HospitalManagement.Database` project to your database.
- 6. Run the below command at the root of the `HospitalManagement.Web` project:
+ 7. Run the below command at the root of the `HospitalManagement.Web` project:
 
 ```cmd
 npm install
 ``` 
+
+### Optional
+1. Execute the `SampleData.sql` script in `HospitalManagement.Database` to insert some sample data into the application's database.

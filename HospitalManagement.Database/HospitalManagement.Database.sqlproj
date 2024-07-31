@@ -127,4 +127,7 @@
     <Build Include="dbo\Tables\Hospital.sql" />
     <Build Include="Security\HospitalManagementUser.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SampleData.sql" />
+  </ItemGroup>
 </Project>
