@@ -3,7 +3,7 @@
 
  ## Initialization
  1. Ensure the server for the database to be used has SQL Server logins enabled.
- 1. Change the connection string in `appsettings.json` to point to a database of your choice.
+ 1. Change the connection string in `HospitalManagement.Web` > `appsettings.json` to point to a database of your choice.
      * If the database is not of type Microsoft SQL Server, you will want to change the extension method in `HospitalManagement.Config.HospitalContext` from `UseSqlServer()` to your database engine of choice.
  2. At the root of the `Web` project, run the below command in your command prompt:
 
