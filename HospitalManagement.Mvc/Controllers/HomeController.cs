@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace HospitalManagement.Web.Controllers
 {
-    public class HomeController(HospitalRepository repository) : Controller
+    public class HomeController(IHospitalRepository repository) : Controller
     {
         public async Task<IActionResult> Index()
         {
