@@ -6,11 +6,11 @@ using System.Text.Json;
 
 namespace HospitalManagement.Web.Controllers
 {
-    public class HomeController(Service service) : Controller
+    public class HomeController(HospitalRepository repository) : Controller
     {
         public async Task<IActionResult> Index()
         {
-            List<Hospital> hospitals = await service.Get();
+            List<Hospital> hospitals = await repository.Get();
             return View(hospitals);
         }
 
@@ -21,7 +21,14 @@ namespace HospitalManagement.Web.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            Hospital hospital = await service.Get(id);
+            Hospital? hospital = await repository.Get(id);
+
+            if (hospital == null)
+            {
+                Toast(ActionType.Error, "Hospital could not be retrieved.");
+                return RedirectToAction("Index");
+            }
+
             return View(hospital);
         }
 
@@ -35,7 +42,7 @@ namespace HospitalManagement.Web.Controllers
             }
 
             int initialId = hospital.HospitalId;
-            await service.Save(hospital);
+            await repository.Save(hospital);
 
             if (initialId == 0)
             {
@@ -52,7 +59,7 @@ namespace HospitalManagement.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int hospitalId)
         {
-            await service.Delete(hospitalId);
+            await repository.Delete(hospitalId);
             Toast(ActionType.Delete, "Hospital deleted.");
 
             return RedirectToAction("Index");

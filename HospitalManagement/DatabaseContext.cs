@@ -1,9 +1,9 @@
 ﻿using HospitalManagement.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace HospitalManagement.Config
+namespace HospitalManagement
 {
-    public class HospitalContext(string connectionString) : DbContext
+    public class DatabaseContext(string connectionString) : DbContext
     {
         public DbSet<Hospital> Hospital { get; set; }
 

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HospitalManagement
 {
-    public class Repository(ICoreConfig config)
+    public class HospitalRepository(ICoreConfig config)
     {
         public async Task<List<Hospital>> Get()
         {
@@ -43,9 +43,9 @@ namespace HospitalManagement
             await db.SaveChangesAsync();
         }
 
-        private HospitalContext DefaultContext()
+        private DatabaseContext DefaultContext()
         {
-            return new HospitalContext(config.ConnectionString);
+            return new DatabaseContext(config.ConnectionString);
         }
     }
 }

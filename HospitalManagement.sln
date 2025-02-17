@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagement.Web", "HospitalManagement.Web\HospitalManagement.Web.csproj", "{8B1BB2F7-B2DE-48DA-BF1D-C01A87A20926}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagement.Mvc", "HospitalManagement.Web\HospitalManagement.Mvc.csproj", "{8B1BB2F7-B2DE-48DA-BF1D-C01A87A20926}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagement", "HospitalManagement\HospitalManagement.csproj", "{B4F2D4C9-D5F5-4029-B170-C62022441315}"
 EndProject
